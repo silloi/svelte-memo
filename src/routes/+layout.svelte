@@ -33,7 +33,7 @@
 	setContext('user', user);
 </script>
 
-<div class="w-full h-full bg-gray-200">
+<div class="w-full h-screen bg-gray-200">
 	{#if user}
 		<slot />
 	{:else}

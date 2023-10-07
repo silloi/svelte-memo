@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { User } from '@supabase/supabase-js';
-	import Memo from "./Memo.svelte";
+	import Memo from './Memo.svelte';
 	import { supabase } from '$lib/db';
 	import { Alert } from 'flowbite-svelte';
-	import { getContext, onMount } from 'svelte';
+	import { afterUpdate, getContext, onMount } from 'svelte';
 	import type { MemoResponse } from '$lib/schema';
 
 	// context から user store を取得します
@@ -12,6 +12,12 @@
 	let memos = new Array<MemoResponse>();
 	let newText = '';
 	let errorText = '';
+
+	let listElement: HTMLElement;
+
+	const scrollToBottom = async (node: HTMLElement) => {
+		node.scroll({ top: node.scrollHeight, behavior: 'smooth' });
+	};
 
 	onMount(() => {
 		fetchMemos();
@@ -42,6 +48,7 @@
 			} else {
 				memos = [...memos, memo];
 				newText = '';
+				scrollToBottom(listElement);
 			}
 		}
 	};
@@ -54,24 +61,44 @@
 			console.log('error', error);
 		}
 	};
+
+	afterUpdate(() => {
+		console.log('afterUpdate');
+		if (memos) scrollToBottom(listElement);
+	});
 </script>
 
-<div class="w-full">
-	<h1 class="mb-12">Memo List.</h1>
-	<form on:submit|preventDefault={() => addMemo(newText)} class="flex gap-2 my-2">
-		<input class="rounded w-full p-2" type="text" placeholder="make coffee" bind:value={newText} />
-		<button type="submit" class="btn-black"> Add </button>
-	</form>
-	{#if !!errorText}
-		<Alert>
-			{errorText}
-		</Alert>
-	{/if}
-	<div class="bg-white shadow overflow-hidden rounded-md">
+<section class="w-full h-full">
+	<div bind:this={listElement} class="bg-white shadow overflow-scroll rounded-md">
 		<ul>
 			{#each memos as memo (memo.id)}
 				<Memo {memo} onDelete={() => deleteMemo(memo.id)} />
 			{/each}
 		</ul>
 	</div>
-</div>
+
+	<div>
+		{#if !!errorText}
+			<Alert>
+				{errorText}
+			</Alert>
+		{/if}
+		<form on:submit|preventDefault={() => addMemo(newText)} class="flex gap-2 my-2">
+			<input
+				class="rounded w-full p-2"
+				type="text"
+				placeholder="make coffee"
+				bind:value={newText}
+			/>
+			<button type="submit" class="btn-black"> Add </button>
+		</form>
+	</div>
+</section>
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+</style>
