@@ -6,6 +6,7 @@ export default defineConfig({
 	plugins: [
 		sveltekit(),
 		SvelteKitPWA({
+			registerType: 'autoUpdate',
 			manifest: {
 				name: 'Svelte Menos',
 				short_name: 'Menos',
@@ -35,6 +36,9 @@ export default defineConfig({
 						url: 'link'
 					}
 				}
+			},
+			devOptions: {
+				enabled: true
 			}
 		})
 	]
