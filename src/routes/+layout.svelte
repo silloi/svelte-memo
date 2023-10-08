@@ -1,6 +1,4 @@
 <script lang="ts">
-	import '../app.postcss';
-
 	import { onMount } from 'svelte';
 	import { supabase } from '$lib/db';
 	import Auth from '$lib/Auth.svelte';

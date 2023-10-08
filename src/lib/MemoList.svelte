@@ -2,7 +2,7 @@
 	import type { User } from '@supabase/supabase-js';
 	import Memo from './Memo.svelte';
 	import { supabase } from '$lib/db';
-	import { Alert } from 'flowbite-svelte';
+	// import { Alert } from 'flowbite-svelte';
 	import { afterUpdate, getContext, onMount } from 'svelte';
 	import type { MemoResponse } from '$lib/schema';
 
@@ -69,7 +69,7 @@
 </script>
 
 <section class="w-full h-full">
-	<div bind:this={listElement} class="bg-white shadow overflow-scroll rounded-md">
+	<div bind:this={listElement} class="bg-white shadow rounded-md" style="overflow-y: auto;">
 		<ul>
 			{#each memos as memo (memo.id)}
 				<Memo {memo} onDelete={() => deleteMemo(memo.id)} />
@@ -79,9 +79,9 @@
 
 	<div>
 		{#if !!errorText}
-			<Alert>
+			<p>
 				{errorText}
-			</Alert>
+			</p>
 		{/if}
 		<form on:submit|preventDefault={() => addMemo(newText)} class="flex gap-2 my-2">
 			<input
