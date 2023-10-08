@@ -4,11 +4,15 @@
 	import Textfield from '@smui/textfield';
 	import type { User } from '@supabase/supabase-js';
 	import { getContext } from 'svelte';
+  import { page } from '$app/stores';
+
+  // let title = $page.url.searchParams.get('title') ?? '';
+  let text = $page.url.searchParams.get('text') ?? '';
 
 	// context から user store を取得します
 	const user = getContext<User>('user');
 
-	let newText = '';
+	let newText = text;
 	let errorText = '';
 
 	const addMemo = async (inputText: string) => {
