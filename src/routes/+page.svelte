@@ -1,27 +1,33 @@
 <script lang="ts">
+  import Drawer, { AppContent, Content } from '@smui/drawer';
 	import MemoList from '$lib/MemoList.svelte';
 </script>
 
-<main class="h-full">
-	<div class="sidebar">
+<div class="drawer-container">
+
+<Drawer>
+  <Content>
 		<MemoList />
-	</div>
-	<div class="mainpanel">
+	</Content>
+</Drawer>
+
+<AppContent class="main-content">
+	<main class="mainpanel">
 		<div class="w-full">hi!</div>
-	</div>
-</main>
+  </main>
+</AppContent>
+
+</div>
 
 <style>
-	main {
-		display: flex;
-		flex-direction: row;
-	}
+  .drawer-container {
+    position: relative;
+    display: flex;
+    height: 100%;
+    overflow-y: hidden;
+  }
 
-	.sidebar {
-		width: 300px;
-	}
-
-	.mainpanel {
+	/* .main-content {
 		flex: 1;
-	}
+	} */
 </style>

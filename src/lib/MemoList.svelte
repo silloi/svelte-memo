@@ -5,6 +5,7 @@
 	// import { Alert } from 'flowbite-svelte';
 	import { afterUpdate, getContext, onMount } from 'svelte';
 	import type { MemoResponse } from '$lib/schema';
+	import List from '@smui/list';
 
 	// context から user store を取得します
 	const user = getContext<User>('user');
@@ -70,11 +71,11 @@
 
 <section class="w-full h-full">
 	<div bind:this={listElement} class="bg-white shadow rounded-md" style="overflow-y: auto;">
-		<ul>
+		<List twoLine>
 			{#each memos as memo (memo.id)}
 				<Memo {memo} onDelete={() => deleteMemo(memo.id)} />
 			{/each}
-		</ul>
+		</List>
 	</div>
 
 	<div>
@@ -97,6 +98,7 @@
 
 <style>
 	section {
+    height: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;

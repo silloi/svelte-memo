@@ -40,3 +40,13 @@
 		</div>
 	{/if}
 </div>
+
+<style>
+	:global(html, body) {
+		margin: 0;
+	}
+
+	.h-screen {
+		height: 100vh;
+	}
+</style>
