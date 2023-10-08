@@ -7,6 +7,7 @@ specifiers:
   '@smui/checkbox': 7.0.0-beta.15
   '@smui/drawer': 7.0.0-beta.15
   '@smui/list': 7.0.0-beta.15
+  '@smui/textfield': 7.0.0-beta.15
   '@supabase/supabase-js': ^2.38.0
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/kit': ^1.20.4
@@ -37,6 +38,7 @@ devDependencies:
   '@smui/checkbox': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
   '@smui/drawer': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
   '@smui/list': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
+  '@smui/textfield': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
   '@sveltejs/adapter-auto': 2.1.0_@sveltejs+kit@1.25.1
   '@sveltejs/kit': 1.25.1_svelte@4.2.1+vite@4.4.11
   '@typescript-eslint/eslint-plugin': 6.7.4_rxhn7267eepyb7vujibrg5kg6a
@@ -466,6 +468,19 @@ packages:
       tslib: 2.6.2
     dev: true
 
+  /@material/floating-label/14.0.0:
+    resolution: {integrity: sha512-Aq8BboP1sbNnOtsV72AfaYirHyOrQ/GKFoLrZ1Jt+ZGIAuXPETcj9z7nQDznst0ZeKcz420PxNn9tsybTbeL/Q==}
+    dependencies:
+      '@material/animation': 14.0.0
+      '@material/base': 14.0.0
+      '@material/dom': 14.0.0
+      '@material/feature-targeting': 14.0.0
+      '@material/rtl': 14.0.0
+      '@material/theme': 14.0.0
+      '@material/typography': 14.0.0
+      tslib: 2.6.2
+    dev: true
+
   /@material/focus-ring/14.0.0:
     resolution: {integrity: sha512-fqqka6iSfQGJG3Le48RxPCtnOiaLGPDPikhktGbxlyW9srBVMgeCiONfHM7IT/1eu80O0Y67Lh/4ohu5+C+VAQ==}
     dependencies:
@@ -490,6 +505,16 @@ packages:
       tslib: 2.6.2
     dev: true
 
+  /@material/line-ripple/14.0.0:
+    resolution: {integrity: sha512-Rx9eSnfp3FcsNz4O+fobNNq2PSm5tYHC3hRpY2ZK3ghTvgp3Y40/soaGEi/Vdg0F7jJXRaBSNOe6p5t9CVfy8Q==}
+    dependencies:
+      '@material/animation': 14.0.0
+      '@material/base': 14.0.0
+      '@material/feature-targeting': 14.0.0
+      '@material/theme': 14.0.0
+      tslib: 2.6.2
+    dev: true
+
   /@material/list/14.0.0:
     resolution: {integrity: sha512-AFaBGV9vQyfnG8BT2R3UGVdF5w2SigQqBH+qbOSxQhk4BgVvhDfJUIKT415poLNMdnaDtcuYz+ZWvVNoRDaL7w==}
     dependencies:
@@ -502,6 +527,18 @@ packages:
       '@material/shape': 14.0.0
       '@material/theme': 14.0.0
       '@material/typography': 14.0.0
+      tslib: 2.6.2
+    dev: true
+
+  /@material/notched-outline/14.0.0:
+    resolution: {integrity: sha512-6S58DlWmhCDr4RQF2RuwqANxlmLdHtWy2mF4JQLD9WOiCg4qY9eCQnMXu3Tbhr7f/nOZ0vzc7AtA3vfJoZmCSw==}
+    dependencies:
+      '@material/base': 14.0.0
+      '@material/feature-targeting': 14.0.0
+      '@material/floating-label': 14.0.0
+      '@material/rtl': 14.0.0
+      '@material/shape': 14.0.0
+      '@material/theme': 14.0.0
       tslib: 2.6.2
     dev: true
 
@@ -530,6 +567,26 @@ packages:
       '@material/feature-targeting': 14.0.0
       '@material/rtl': 14.0.0
       '@material/theme': 14.0.0
+      tslib: 2.6.2
+    dev: true
+
+  /@material/textfield/14.0.0:
+    resolution: {integrity: sha512-HGbtAlvlIB2vWBq85yw5wQeeP3Kndl6Z0TJzQ6piVtcfdl2mPyWhuuVHQRRAOis3rCIaAAaxCQYYTJh8wIi0XQ==}
+    dependencies:
+      '@material/animation': 14.0.0
+      '@material/base': 14.0.0
+      '@material/density': 14.0.0
+      '@material/dom': 14.0.0
+      '@material/feature-targeting': 14.0.0
+      '@material/floating-label': 14.0.0
+      '@material/line-ripple': 14.0.0
+      '@material/notched-outline': 14.0.0
+      '@material/ripple': 14.0.0
+      '@material/rtl': 14.0.0
+      '@material/shape': 14.0.0
+      '@material/theme': 14.0.0
+      '@material/tokens': 14.0.0
+      '@material/typography': 14.0.0
       tslib: 2.6.2
     dev: true
 
@@ -653,6 +710,17 @@ packages:
       - typescript
     dev: true
 
+  /@smui/floating-label/7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe:
+    resolution: {integrity: sha512-KRjZjO8AGE5uKHewmn05vyAxIi6XOGo8a4jn8b0+dIJcYxaPpmtacH4PeQHw4vOR88cX/0DqqxSz6+Fkrt+SIA==}
+    dependencies:
+      '@material/floating-label': 14.0.0
+      '@smui/common': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
+      svelte2tsx: 0.6.22_ihwjmfflvgyqta4xkfhaggvtwe
+    transitivePeerDependencies:
+      - svelte
+      - typescript
+    dev: true
+
   /@smui/icon-button/7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe:
     resolution: {integrity: sha512-Hvvv9w6hDCDOrSgxlcsXrCLOE8VJeTJ5Tu1n+FBqvIfetaF7ATXDwXx+raEznJ4kZK6CyoQTzMIr2rz4hxGiMA==}
     dependencies:
@@ -660,6 +728,17 @@ packages:
       '@material/icon-button': 14.0.0
       '@smui/common': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
       '@smui/ripple': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
+      svelte2tsx: 0.6.22_ihwjmfflvgyqta4xkfhaggvtwe
+    transitivePeerDependencies:
+      - svelte
+      - typescript
+    dev: true
+
+  /@smui/line-ripple/7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe:
+    resolution: {integrity: sha512-tfdEybgQlLiotELlWknLzb5l6pT47uGfMGYzLs5AVf74CU/zAhp8NiicHUUmI95qY5P2z2xHYYpdLTs1wZ5c9A==}
+    dependencies:
+      '@material/line-ripple': 14.0.0
+      '@smui/common': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
       svelte2tsx: 0.6.22_ihwjmfflvgyqta4xkfhaggvtwe
     transitivePeerDependencies:
       - svelte
@@ -680,12 +759,43 @@ packages:
       - typescript
     dev: true
 
+  /@smui/notched-outline/7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe:
+    resolution: {integrity: sha512-9oVSIYmb1/GcCFYm1M0xVy4J5/A2Ysa4H6gm3RIL9/ke3F9EmmALmCs1lmtGu4Vwyo0ES5KroW2Tly2SzMfB2g==}
+    dependencies:
+      '@material/notched-outline': 14.0.0
+      '@smui/common': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
+      '@smui/floating-label': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
+      svelte2tsx: 0.6.22_ihwjmfflvgyqta4xkfhaggvtwe
+    transitivePeerDependencies:
+      - svelte
+      - typescript
+    dev: true
+
   /@smui/ripple/7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe:
     resolution: {integrity: sha512-l0c94p60gxbsClH0KzA2meJ2IGHc7ZUMyWqODkLNz7ziUYxk3VZvWf/Y7Ca+64IJj0keCGPMpFauFaJO8h3Gtw==}
     dependencies:
       '@material/dom': 14.0.0
       '@material/ripple': 14.0.0
       '@smui/common': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
+      svelte2tsx: 0.6.22_ihwjmfflvgyqta4xkfhaggvtwe
+    transitivePeerDependencies:
+      - svelte
+      - typescript
+    dev: true
+
+  /@smui/textfield/7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe:
+    resolution: {integrity: sha512-98lGaVJRH3K5aXVUAa8o/8rHRQ/Vwu9q6phupSrPW4BEmEEEezb/fzKExTOgm0c241dy4nDRLkdH9IdtObTA8w==}
+    dependencies:
+      '@material/dom': 14.0.0
+      '@material/feature-targeting': 14.0.0
+      '@material/ripple': 14.0.0
+      '@material/rtl': 14.0.0
+      '@material/textfield': 14.0.0
+      '@smui/common': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
+      '@smui/floating-label': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
+      '@smui/line-ripple': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
+      '@smui/notched-outline': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
+      '@smui/ripple': 7.0.0-beta.15_ihwjmfflvgyqta4xkfhaggvtwe
       svelte2tsx: 0.6.22_ihwjmfflvgyqta4xkfhaggvtwe
     transitivePeerDependencies:
       - svelte

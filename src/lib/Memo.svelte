@@ -44,7 +44,7 @@
 		<SecondaryText>
 			{createTimestampLabel(new Date(memo.inserted_at))}
 		</SecondaryText>
-  </Text>
+	</Text>
 	<Meta>
 		<input type="checkbox" on:change={toggle} bind:checked={isPinned} />
 		<Button on:click={onDelete}>
