@@ -12,16 +12,17 @@ export default defineConfig({
 				short_name: 'Menos',
 				description: 'The missing link between memos and notes',
 				display: 'standalone',
+				start_url: './app.html',
 				background_color: '#ffffff',
 				icons: [
 					{
-						src: '%sveltekit.assets%/favicon-192x192.png',
+						src: '/icon-192x192.png',
 						sizes: '192x192',
 						type: 'image/png',
 						purpose: 'any maskable'
 					},
 					{
-						src: '%sveltekit.assets%/favicon-512x512.png',
+						src: '/icon-512x512.png',
 						sizes: '512x512',
 						type: 'image/png',
 						purpose: 'any maskable'
