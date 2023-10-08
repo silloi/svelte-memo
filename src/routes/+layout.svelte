@@ -32,7 +32,7 @@
 </script>
 
 <div class="w-full h-screen bg-gray-200">
-	{#if user}
+	{#if $user}
 		<slot />
 	{:else}
 		<div class="min-w-full min-h-screen flex items-center justify-center">
