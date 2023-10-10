@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { supabase } from '$lib/db';
 	import Button from '@smui/button/src/Button.svelte';
+  import Card from '@smui/card';
 	import Textfield from '@smui/textfield';
 	import type { User } from '@supabase/supabase-js';
 	import { getContext } from 'svelte';
   import { page } from '$app/stores';
 
-  // let title = $page.url.searchParams.get('title') ?? '';
+  let title = $page.url.searchParams.get('title') ?? '';
   let text = $page.url.searchParams.get('text') ?? '';
 
 	// context から user store を取得します
@@ -42,6 +43,16 @@
 			bind:value={newText}
 			label="create a memo"
 		/>
+    {#if title || text}
+      <Card variant="outlined" padded>
+        <h2 class="mdc-typography--headline6">
+          {title}
+        </h2>
+        <h3 class="mdc-typography--subtitle2">
+          {text}
+        </h3>
+      </Card>
+    {/if}
     <div class="button-wrap">
       <Button type="submit">
         Submit
@@ -55,7 +66,9 @@
 	{/if}
 </main>
 
-<style>
+<style lang="scss">
+  @use './src/_Typography';
+
 	main {
     margin: 60px auto;
 		max-width: 600px;
