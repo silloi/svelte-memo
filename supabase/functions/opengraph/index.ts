@@ -3,22 +3,37 @@
 // This enables autocomplete, go to definition, etc.
 
 import { DOMParser } from 'https://deno.land/x/deno_dom/deno-dom-wasm.ts';
+import { corsHeaders } from '../_shared/cors.ts';
 
 Deno.serve(async (req) => {
-	const { link } = await req.json();
-	const textResponse = await fetch(link);
-	const textData = await textResponse.text();
+	// This is needed if you're planning to invoke your function from a browser.
+	if (req.method === 'OPTIONS') {
+		return new Response('ok', { headers: corsHeaders });
+	}
 
-	const document = new DOMParser().parseFromString(textData, 'text/html');
-	const ogImageElement = document.head.querySelector('[property$=image][content]');
+	try {
+		const { link } = await req.json();
+		const textResponse = await fetch(link);
+		const textData = await textResponse.text();
 
-	const ogImage = ogImageElement?.getAttribute('content') ?? '';
+		const document = new DOMParser().parseFromString(textData, 'text/html');
+		const ogImageElement = document.head.querySelector('[property$=image][content]');
 
-	const data = {
-		ogImage
-	};
+		const ogImage = ogImageElement?.getAttribute('content') ?? '';
 
-	return new Response(JSON.stringify(data), { headers: { 'Content-Type': 'application/json' } });
+		const data = {
+			ogImage
+		};
+
+		return new Response(JSON.stringify(data), {
+			headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+		});
+	} catch (error) {
+		return new Response(JSON.stringify({ error: error.message }), {
+			headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+			status: 400
+		});
+	}
 });
 
 // To invoke:
